@@ -9,7 +9,7 @@ urlpatterns = [
     path('ads/', include('ads.urls')),
     path('admin/', admin.site.urls),  # Keep
     # path('accounts/', include('django.contrib.auth.urls')),
-    path(r'^keycloak/', include('django_keycloak.urls')),
+    re_path(r'^keycloak/', include('django_keycloak.urls')),
 
 
 

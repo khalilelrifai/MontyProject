@@ -32,7 +32,7 @@ class AdDeleteView(OwnerDeleteView):
     model = Ad
 
 
-class AdCreateView(LoginRequiredMixin, View):
+class AdCreateView(LoginRequiredMixin,View):
     template_name = 'ads/ad_form.html'
     success_url = reverse_lazy('ads:all')
 
@@ -57,7 +57,7 @@ class AdCreateView(LoginRequiredMixin, View):
         return redirect(self.success_url)
 
 
-class AdUpdateView(LoginRequiredMixin, View):
+class AdUpdateView( LoginRequiredMixin,View):
     template_name = 'ads/ad_form.html'
     success_url = reverse_lazy('ads:all')
 
@@ -77,7 +77,7 @@ class AdUpdateView(LoginRequiredMixin, View):
 
         inst = form.save(commit=False)
         inst.save()
-        inst.save_m2m()
+        
         return redirect(self.success_url)
 
 
